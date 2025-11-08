@@ -106,3 +106,16 @@ function toggleScientific() {
     toggleBtn.textContent = "Hide Scientific";
   }
 }
+
+const toggleBtn = document.getElementById("themeToggle");
+
+toggleBtn.addEventListener("click", () => {
+  document.body.classList.toggle("dark-mode");
+
+  // Change icon dynamically
+  if (document.body.classList.contains("dark-mode")) {
+    toggleBtn.textContent = "☀️"; // Light mode icon
+  } else {
+    toggleBtn.textContent = "🌙"; // Dark mode icon
+  }
+});
