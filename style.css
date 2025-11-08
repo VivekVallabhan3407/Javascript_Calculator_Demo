@@ -7,6 +7,7 @@
     /* so absolute elements position relative to this */
     background-color: var(--bg-color);
     transition: background-color 0.3s;
+    flex-direction: column;
 }
 
 /* Calculator styles */
@@ -20,24 +21,22 @@
 }
 
 /* Theme toggle button */
-.theme-toggle {
-    position: absolute;
-    top: 20px;
-    /* you can change this */
-    right: 20px;
-    /* or this for side/bottom placement */
-    padding: 8px 12px;
-    font-size: 20px;
+#themeToggle {
+    display: block;
+    margin: 20px auto;
+    width: 150px;
+    /* centers the button above the calculator */
+    padding: 5px 10px;
     border: none;
-    border-radius: 50%;
-    cursor: pointer;
+    border-radius: 8px;
     background-color: #333;
     color: white;
-    transition: background-color 0.3s, transform 0.2s;
+    font-size: 16px;
 }
 
-.theme-toggle:hover {
-    transform: scale(1.1);
+#themeToggle:hover {
+    background-color: #555;
+    transform: scale(1.05);
 }
 
 /* Light and Dark Themes */

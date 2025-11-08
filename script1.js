@@ -107,15 +107,23 @@ function toggleScientific() {
   }
 }
 
-const toggleBtn = document.getElementById("themeToggle");
+function toggleTheme() {
+  const toggleBtn = document.getElementById("themeToggle");
+  if (!toggleBtn) return;
 
-toggleBtn.addEventListener("click", () => {
   document.body.classList.toggle("dark-mode");
 
-  // Change icon dynamically
+  // Update button text/icon depending on the current theme
   if (document.body.classList.contains("dark-mode")) {
-    toggleBtn.textContent = "☀️"; // Light mode icon
+    toggleBtn.textContent = "☀️ Light Mode"; // show sun to switch to light
   } else {
-    toggleBtn.textContent = "🌙"; // Dark mode icon
+    toggleBtn.textContent = "🌙 Dark Mode"; // show moon to switch to dark
   }
-});
+}
+
+// Initialize the theme button text on load if the button exists
+(function initThemeToggle() {
+  const toggleBtn = document.getElementById("themeToggle");
+  if (!toggleBtn) return;
+  toggleBtn.textContent = document.body.classList.contains("dark-mode") ? "☀️ Light Mode" : "🌙 Dark Mode";
+})();
